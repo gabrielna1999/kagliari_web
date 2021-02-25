@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Broken Youth | Home</title>
+    <%- include('./partials/head.ejs')%>     
+    <link rel='stylesheet' href='/stylesheets/vistaProductos.css' />    
+  </head>
+  <body>
+    <%- include('./partials/header.ejs')%>
+
+    <div> <img id="home_img" src="/images/home_img.jpg"> </div>
+    
+    <!-- CARRUSEL -->
+    <div class="carrusel" id="carousel">
+      <button class="carousel_button" id="carousel_left" onclick="changeImgLeft()"> < </button>
+      <button class="carousel_button" id="carousel_right" onclick="changeImgRight()">></button>
+      <img id="slideImg" name="slide">
+      
+      <div id="carousel_text">
+          <h1 name="carousel_text"></h1>
+      </div>
+    </div>
+    <script>
+        var i = 0;
+        var images = [];
+        var texts = [];
+
+        // image list
+        images[0] = '/images/index_carrusel/carrusel1.png';
+        images[1] = '/images/index_carrusel/carrusel2.png';
+        images[2] = '/images/index_carrusel/carrusel3.png';
+
+        // text list
+        texts = ['','',''];
+
+        // change image
+        function changeImgLeft() {
+        if (i > 0) {
+                i--;
+            } else {
+                i = 2;
+            }
+            changeTextLeft(i);
+            
+            document.slide.src = images[i];
+        }
+
+        function changeImgRight() {
+        if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            changeTextRight(i);
+            
+            document.slide.src = images[i];
+        }
+
+        window.onload = document.slide.src = images[i];
+        window.onload = document.getElementsByName("carousel_text")[0].innerText = texts[i];
+
+        // change text
+        function changeTextLeft(counter) {
+            document.getElementsByName("carousel_text")[0].innerText = texts[counter];
+        }
+
+        function changeTextRight(counter) {
+            document.getElementsByName("carousel_text")[0].innerText = texts[counter];
+        }
+    </script>
+
+
+    <!-- DESTACADOS -->
+    <div id = "destacados"> PRODUCTOS DESTACADOS </div>
+    <section id="productos">
+      <% for (let i = 0; i < 4; i++){ %>
+        <div class="producto">
+          <a href="/product/detalleProducto/<%= productos[i].id %>">
+            <img id = "imagen" src="/images/producto/<%= productos[i].imagen_ruta %>">
+          </a>
+          <section id="info">  
+            <div id="nombreproduc"><%= productos[i].nombre %></div>
+            <div id="precioproduc">$<%= productos[i].precio %></div>
+          </section>
+        </div>
+      <% } %>
+    </section>
+
+    <%- include("./partials/footer") %>
+
+  </body> 
+</html>

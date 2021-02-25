@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Broken Youth | Edicion de Producto</title>
+    <%- include('./partials/head.ejs')%>
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+    <link rel="stylesheet" href="/stylesheets/cargarProducto.css"/>
+  </head>
+
+    <body>
+    <%- include('./partials/header.ejs')%>
+
+        <main>
+            <!-- 
+            <div class="divder">
+                <div class="div1">
+                    <p class="datos">DATOS DEL PRODUCTO</p>
+                </div>
+                <div class="div2">
+                    <img src="/images/icons/Camara.png" class="img1">
+                </div>
+                <div class="div3">
+                    <img src="/images/icons/Camara.png">
+                    <img src="/images/icons/Camara.png">
+                    <img src="/images/icons/Camara.png">
+                </div>
+                <div class="div4">
+                    <input type="file">
+                </div>
+
+            </div> -->
+
+            <div class="divizq">
+                <form class="formulario" action="/product/edicionProductos/<%=productos.id%>" method="POST" enctype="multipart/form-data">
+
+                    <div class="contenedor">
+        
+        
+                        <div class="input-contenedor">
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <input type="text" placeholder="PRODUCTO" value="<%=productos.nombre%>" name="producto">   
+                        </div>
+
+
+                        <div class="input-contenedor">
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <input type="text" placeholder="PRECIO" value="<%=productos.precio%>" name="precio">   
+                        </div>
+
+                        <div class="input-contenedor">
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <input type="text" placeholder="DESCRIPCION" value="<%=productos.descripcion%>" name="descripcion">   
+                        </div>
+
+                        <div class="input-contenedor">
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <label>CATEGORIA</label>
+                            <select name="categoria">
+                            <% for ( let i = 0; i < categorias.length; i++) { %>
+                                <% if (categorias[i].id == productos.categoria_id) { %>
+                                    <option value="<%=categorias[i].id%>" selected>
+                                        <%=categorias[i].id%>
+                                    </option>
+
+                                <% } else %> 
+                                <option value="<%=categorias[i].id%>">
+                                    <%=categorias[i].id%>
+                                </option>
+                                
+                            <% } %>
+                            </select> 
+                        </div>                       
+
+                        <div class="input-contenedor">
+                            <label>IMAGEN (Cargar un archivo para editar, dejar vacio para mantener la misma imagen)</label> 
+                            <img style="width: 100%;" src="/images/producto/<%= productos.imagen_ruta %>" alt="No hay imagen">                           
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <input type="file" placeholder="IMAGEN" name="imagen">   
+                        </div>
+
+                        <button type="submit">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <%- include("./partials/footer") %>
+
+    </body>
+</html>

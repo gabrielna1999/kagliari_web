@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Broken Youth | Register</title>
+    <%- include('./partials/head.ejs')%>
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+  </head>
+
+<body>
+    <%- include("./partials/header") %>
+
+
+    <form class="formulario" method="POST">
+
+        <h1>EDITAR PERFIL</h1>
+        <div class="contenedor">
+
+            <div class="input-contenedor">
+                <!-- <i class="fal fa-user icon"></i> -->
+                <input type="text" value="<%=usuarioLogueado.nombre%>" placeholder="NOMBRE Y APELLIDO" name="nombre">    
+            </div>
+
+            <div class="input-contenedor">
+                <!-- <i class="far fa-envelope icon"></i> -->
+                <input type="text" value="<%=usuarioLogueado.email%>" placeholder="E-MAIL" name="email">   
+            </div>
+
+            <div class="input-contenedor">
+                <!-- <i class="fal fa-phone-alt icon"></i> -->
+                <label id="fecha-label" for="fecha"> FECHA DE NACIMIENTO</label>
+                <div id="fecha-contenedor">
+                    <input id="fecha" type="date" value="<%=usuarioLogueado.fecha_nacimiento%>" placeholder="FECHA DE NACIMIENTO" name="fecha"> 
+                </div> 
+            </div>
+
+            <div class="input-contenedor">
+                <!-- <i class="far fa-unlock-alt icon"></i> -->
+                <input type="password" placeholder="CONTRASEÑA" name="password">   
+            </div>
+
+            <div class="input-contenedor">
+                <!-- <i class="far fa-unlock-alt icon"></i> -->
+                <input type="password" placeholder="CONFIRMAR CONTRASEÑA" name="rePassword">   
+            </div>
+
+            <% if(typeof errors != 'undefined'){ %>
+                <ul style="padding-left: 0%;">
+                    <% for(let i = 0; i < errors.length; i++){ %>
+                        <li style="list-style: none; padding-left: 0; font-size: 12px; color: red;">
+                            <%= errors[i].msg %>
+                        </li>
+                    <% } %>
+                </ul>
+            <% } %>
+
+            <input type="submit" value="GUARDAR CAMBIOS" class="button">
+
+            
+
+        </div>
+    </form>
+    
+    <%- include("./partials/footer") %>
+</body>
+</html>

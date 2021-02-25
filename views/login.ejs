@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Broken Youth | Login</title>
+    <%- include('./partials/head.ejs')%>
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+  </head>
+
+    <body>
+        <%- include("./partials/header") %>
+
+
+        <form class="formulario" method="POST" action="login">
+
+            <h1>INICIAR SESIÓN</h1>
+            <div class="contenedor">
+
+                <div class="input-contenedor">
+                    <!-- <i class="far fa-envelope icon"></i> -->
+                    <input type="text" placeholder="E-MAIL" name="email">   
+                </div>
+
+                <div class="input-contenedor">
+                    <!-- <i class="far fa-unlock-alt icon"></i> -->
+                    <input type="password" placeholder="CONTRASEÑA" name="password">   
+                </div>               
+            
+
+                <% if(typeof errors != 'undefined'){ %>
+                    <ul style="padding-left: 0%;">
+                        <% for(let i = 0; i < errors.length; i++){ %>
+                            <li style="list-style: none; padding-left: 0; font-size: 12px; color: red;">
+                                <%= errors[i].msg %>
+                            </li>
+                        <% } %>
+                    </ul>
+                <% } %>
+
+                <div id="recordame-div">                    
+                    <input id="recordame-input" type="checkbox" name="recordame">
+                    <label id="recordame-label" for="recordame">Recordame</label>
+                </div>
+
+                <input type="submit" value="INICIAR SESIÓN" class="button">
+
+                <p> ¿Olvidaste tu contraseña?
+                </p>
+                <p>¿Aún no tenés una cuenta? <a class="link" href="register" >REGISTRATE</a></p>
+
+            </div>
+        </form>
+
+        <%- include("./partials/footer") %>
+
+    </body>
+</html>

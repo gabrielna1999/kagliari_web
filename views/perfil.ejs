@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Broken Youth | Register</title>
+    <%- include('./partials/head.ejs')%>
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+  </head>
+
+<body>
+    <%- include("./partials/header") %>
+
+
+    <form class="formulario" action="/users/editarPerfil/<%=usuarioLogueado.id%>" method="GET">
+
+        <h1>TU PERFIL</h1>
+        <div class="contenedor">
+
+            <div>
+                <h5>NOMBRE: <%=usuarioLogueado.nombre%></h5>
+                
+            </div>
+
+            <div>
+                <h5>EMAIL: <%=usuarioLogueado.email%></h5>
+                
+            </div>
+
+            <div>
+                <h5>FECHA DE NACIMIENTO: <%=usuarioLogueado.fecha_nacimiento%></h5>
+                
+            </div>          
+
+            <a href="/users/editarPerfil"><input type="submit" value="EDITAR PERFIL" class="button"></a>
+
+            
+
+        </div>
+    </form>
+    
+    <%- include("./partials/footer") %>
+</body>
+</html>

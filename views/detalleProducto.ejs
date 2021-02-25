@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Broken Youth | Detalle de Producto</title>
+    <%- include('./partials/head.ejs')%>
+    <link rel='stylesheet' href='/stylesheets/product.css' />
+  </head>
+  <body>
+    
+    <%- include('./partials/header.ejs')%>
+
+    
+    
+    <main>
+
+        <section id="prod_img">
+
+            <article>
+                <img id="prod_main" src="/images/producto/<%= producto.imagen_ruta %>">
+            </article>
+
+            <!-- <article id="prod_sub">
+
+                <div> <img class="prod_sub" src="/images/producto/inheritance_sub1.png"> </div>
+                <div> <img class="prod_sub" src="/images/producto/inheritance_sub2.png"> </div>
+                <div> <img class="prod_sub" src="/images/producto/inheritance_sub3.png"> </div>
+                <div> <img class="prod_sub" src="/images/producto/inheritance_sub4.png"> </div>
+
+            </article> -->
+
+        </section>
+
+        <section id="info">
+
+            <article>
+
+                
+                <!-- <div id="prod_categoria"><%= producto.categoria.nombre %></div> -->
+                <div id="prod_name"><%= producto.nombre %></div>                
+                <div id="prod_precio">$<%= producto.precio %></div>
+                
+
+            </article>
+            <br>
+            <% if(typeof errors != 'undefined'){ %>
+                <p style="list-style: none; padding-left: 0; font-size: 12px; color: red;">
+                    <%= errors %>
+                </p>
+            <% } %>
+            
+            <form action="/product/detalleProducto/<%= producto.id %>" method="POST">
+                <div id="talles">TALLE: <br>
+                    <% producto.talles.forEach(talle => { %>
+                    <input name="talle" type="radio" value="<%= talle.id %>" required>
+                    <label id="talle-opcion" for="<%= talle.id %>"><%= talle.id %></label><br>
+                    <% }) %>
+                </div> 
+                <br><br>
+                
+                <div id="talles">CANTIDAD:
+                    <select name="cantidad" id="elegir_talle">
+                        <% for(let i = 1; i <= 10; i++){ %>
+                            <option value="<%= i %>"><%= i %></option>
+                        <% } %>    
+                    </select>
+                </div>               
+
+                <br>
+
+                <button id="agregar_talle" type="submit">AGREGAR</button>
+            </form>
+
+            <article id="descripcion">
+                <div id="descrip_titulo">DESCRIPCIÓN</div>
+                <div id="descrip_content"><%= producto.descripcion %></div>
+            </article> 
+            
+            
+
+        </section>       
+
+    </main>   
+    
+    <% if(admin == true){ %>
+        <div id="detalle-prod-admin">
+            <a href="/product/edicionProductos/<%=producto.id%>"><button class="edit-prod" >EDITAR</button></a>
+            <a href="/product/borrar/<%=producto.id%>"><button class="edit-prod">BORRAR</button></a>
+        </div>
+    <% } %>
+
+    <%- include("./partials/footer") %>
+
+  </body>
+<html>

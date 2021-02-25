@@ -1,0 +1,164 @@
+body {
+    background: black;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 50vw;
+}
+
+.contenedor{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 6vw;
+}
+
+.formulario{
+    background: rgb(2, 2, 2);
+    margin: 0px;
+    margin-top: 240px;
+    margin-bottom: 200px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 300;
+    color: #fff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#fecha-label{
+    background-color: rgb(224, 224, 224);
+    color: gray;
+    font-size: 10px;
+    padding: 10px 10px;
+}
+
+input{
+    font-size: 10px;
+    width: 100%;
+    color: grey; 
+    padding: 10px 0px;
+    border: none;
+    text-indent: 10px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.input-contenedor{
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="date"]{
+    width: 30%;
+    text-transform: uppercase;    
+    text-align: left;
+    text-indent: 5px;
+}
+
+#fecha-contenedor{
+    width: 100%;
+    margin-top: 4px;
+}
+
+#recordame-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+#recordame-input{
+    display: inline;
+    flex-wrap: wrap;
+    width: 12px;
+    margin: 0px;
+}
+
+#recordame-label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px 8px;
+}
+
+.icon{
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+
+.button{
+    border: none;
+    width: 100%;
+    color: white;
+    background: #9b9d9e;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.button:hover{
+    background: rgb(105, 105, 105);
+}
+
+p{
+    text-align: center;
+    font-size: 12px;
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.link:hover{
+    color: #9b9d9e;
+    
+
+}
+
+
+
+@media(min-width:700px){
+    .formulario{
+        margin: auto;
+        width: 40vw;
+        margin-top: 190px;
+        border-radius: 2%;
+    }
+
+    
+}
+
+@media(max-width:700px){
+    .formulario{
+        margin: auto;
+        width: 80vw;
+        margin-top: 2vw;
+        border-radius: 2%;
+    }
+    
+    h1{
+        font-size: 8vw;
+        margin: 3vw;
+    }
+
+    input[type="date"]{
+        width: 80%;
+    }
+}

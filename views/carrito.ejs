@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Broken Youth | Carrito de Compras</title>
+    <%- include('./partials/head.ejs')%>    
+    <link rel='stylesheet' href='/stylesheets/carrito.css' />
+  </head>
+    <body>
+        <%- include('./partials/header.ejs')%>  
+
+        <main>
+
+            <h2>TU CARRITO</h2> 
+            
+            <% if(carrito == undefined){ %>
+                
+            <% } %>
+
+            <% if(carrito != undefined){ carrito.forEach(producto => { %>
+                <section class="producto">                
+                    <div class="titulo"><p id = "modelo"><%= producto.nombre %></p><a href="/product/sacarDelCarrito/<%= producto.compraProductoId %>"><i id="trash_icon" class="fa fa-trash fa-lg" style="color: white;"></i></a></div>
+                    <div class="cantidad">
+                        <img class="imagen" src="/images/producto/<%= producto.imagen_ruta %>">                        
+                        <a href="http://localhost:3000/product/carrito/restar/<%= producto.compraProductoId %>/<%= producto.cantidad %>" class="botones"><button type="text" class="mas-menos">-</button></a>
+                        <div class="dos"><%= producto.cantidad %></div>
+                        <a href="http://localhost:3000/product/carrito/sumar/<%= producto.compraProductoId %>/<%= producto.cantidad %>" class="botones"><button type="text" class="mas-menos">+</button></a> 
+                    </div>
+                    <br>
+                    <p id="talle"> Talle <%= producto.talle %></p>
+                    <p id="precio">$<%= producto.precio %></p>
+                </section>
+            <% }) } %>  
+            
+            <% if(cantidadDeItems == 0){ %>
+                <p style="color: white; text-align: center; margin-top: 50px; margin-bottom: 40px"> No hay productos en tu carrito </p>
+                <a href="/product/vistaProductos" style="justify-self: center; align-self: center;"><button type="text" class="botonFinal" style="justify-self: center;">VER PRODUCTOS</button></a>
+
+            <% } %>
+
+                     
+            <section id="botones" style="margin-top: 100px">   
+                <% if(cantidadDeItems != 0){ %>
+                <div class="total">
+                    <div class="ptotal">TOTAL: &nbsp $<%= compra.precio_total %></div>
+                </div>
+
+                <div class="final">
+                    <a href="/product/vistaProductos" class="divFinal"><button type="text" class="botonFinal">CONTINUAR COMPRANDO</button></a>
+                    <a href="/product/finalizarCompra" class="divFinal"><button type="text" class="botonFinal">FINALIZAR COMPRA</button></a>
+                </div>
+
+                <% } %>               
+                
+
+                
+            </section>
+           
+        </main>
+        <%- include("./partials/footer") %>
+  </body>
+</html>

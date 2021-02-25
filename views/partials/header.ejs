@@ -1,0 +1,82 @@
+<header>
+    <!-- Mobile -->
+    <section id = "mobile_header">               
+
+            <!-- MENU DROPDOWN -->               
+            <div>
+                <button id="menu_icon" onclick="mostrarDropdown()" class="dropbtn"><img class="header" id="menu_icon" src="/images/icons/menu.png"></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <form method="GET" action="/product/search"><div id="buscar"><input type="text" placeholder="Buscar..." name="search" ><i id ="lupa"class="fa fa-search" aria-hidden="true"></i></div></form>
+                    <a href="/product/vistaproductos">PRODUCTOS</a>
+                    <a href="/comoComprar">COMO COMPRAR</a>
+                    <a href="/quienesSomos">QUIENES SOMOS</a>
+                    <a href="/product/carrito">CARRITO &nbsp <i id="carrito_icon" class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> &nbsp <%= cantidadDeItems %> items</a>
+                </div>
+                
+                
+                <script>
+                    /* When the user clicks on the button,
+                    toggle between hiding and showing the dropdown content */
+                    function mostrarDropdown() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                    }
+                </script>
+             
+            </div>
+            <!-- MENU DROPDOWN FIN -->
+
+
+            <!-- LOGO -->
+            <div> <a href="/"><img class="header" id="menu_logo" src="/images/logo.png"></a> </div>
+
+            <!-- USER DROPDOWN -->
+            <div>
+                <button id="menu_user" onclick="mostrarUserDropdown()" class="dropbtn"><img class="header" id="menu_user" src="/images/icons/user.png"></button>
+                <div id="myDropdownUsers" class="userDropdown-content">                        
+                    <% if(usuarioLogueado == undefined) { %> 
+                        <a class="dropdown-opciones" href="/users/login">INICIAR SESION</a>
+                        <a class="dropdown-opciones" href="/users/register">REGISTRARSE</a>
+                    <% } %> 
+                    <% if(usuarioLogueado != undefined) { %>
+                        <a class="dropdown-opciones" href="/users/perfil">VER PERFIL</a>
+                        <a class="dropdown-opciones" href="/users/editarPerfil/<%= usuarioLogueado.id %>">EDITAR PERFIL</a>
+                    <% } %> 
+                </div>
+                
+                
+                <script>
+                    /* When the user clicks on the button,
+                    toggle between hiding and showing the dropdown content */                    
+                    function mostrarUserDropdown(){
+                    document.getElementById("myDropdownUsers").classList.toggle("userShow");
+                    }                      
+                </script>
+                
+            </div>                
+            
+            <!-- USER DROPDOWN FIN -->
+
+   </section> 
+
+    <!-- Web -->
+    <section id = "web_header">
+        <article id="top">
+            <% if(usuarioLogueado != undefined){ %>
+                <div id="login"><a title="Ver Perfil" id="usuario" href="/users/perfil"><%=usuarioLogueado.nombre%></a>&nbsp / &nbsp<a href="/users/cerrarSesion">CERRAR SESION</a></div>
+            <% } else{ %>
+                <div id="login"><a href = "/users/login">INICIAR SESION </a>&nbsp / &nbsp<a href="/users/register"> REGISTRARSE</a></div>
+            <% } %>
+
+            <form method="GET" action="/product/search"><div id="buscar"><input type="text" placeholder="Buscar..." name="search" ><i id ="lupa"class="fa fa-search" aria-hidden="true"></i></div></form>
+            <a title="Ir a Carrito" href="/product/carrito"><div id="carrito"><i id="carrito_icon" class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp <%= cantidadDeItems %> items </div></a>
+        </article>
+        <article id="logo_art">
+            <a href = "/"><div> <img class="header" id="menu_logo_web" src="/images/logo.png"> </div></a>
+        </article>
+        <article id="web_menu">
+            <div><a href="/product/vistaproductos">PRODUCTOS</a></div>
+            <div><a href="/comoComprar">COMO COMPRAR</a></div> 
+            <div><a href="/quienesSomos">QUIENES SOMOS</a></div>
+        </article>
+    </section>
+</header>

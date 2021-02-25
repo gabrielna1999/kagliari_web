@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Broken Youth | Carga de Producto</title>
+    <%- include('./partials/head.ejs')%>
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+    <link rel="stylesheet" href="/stylesheets/cargarProducto.css"/>
+  </head>
+
+    <body>
+    <%- include("./partials/header") %>
+
+
+        <div>
+                <form class="formulario" method="POST" enctype="multipart/form-data">
+
+                    <div class="contenedor">
+                                
+                        <div class="input-contenedor">
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <input type="text" placeholder="PRODUCTO" name="producto">   
+                        </div>
+
+
+                        <div class="input-contenedor">
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <input type="text" placeholder="PRECIO" name="precio">   
+                        </div>
+
+                        <div class="input-contenedor">
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <input type="text" placeholder="DESCRIPCIÓN" name="descripcion">   
+                        </div>                      
+        
+        
+                        <div class="input-contenedor">
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <label>CATEGORIA</label>
+                            <select name="categoria">
+                            <% for ( let i = 0; i < categorias.length; i++) { %>
+                                <option value="<%=categorias[i].id%>">
+                                    <%= categorias[i].id %>: <%= categorias[i].nombre %>
+                                </option>
+                            <% } %>
+                            </select> 
+                        </div>
+
+                        <div class="input-contenedor">
+                            <label>IMAGEN</label>
+                            <!-- <i class="far fa-unlock-alt icon"></i> -->
+                            <input type="file" placeholder="IMAGEN" name="imagen">
+                        </div>
+                           
+                        
+
+                        <input type="submit" value="GUARDAR Y PUBLICAR" class="buttom">
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <%- include("./partials/footer") %>
+
+    </body>
+</html>

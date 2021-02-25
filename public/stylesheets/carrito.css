@@ -1,0 +1,332 @@
+main{
+    margin-top: 15vw;
+    
+}
+
+h2{
+    display: block;
+    width: 100vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3vw;
+    text-align: center;
+    margin: 00px 0px 0px 0px;
+    font-weight: 500;
+    padding-top: 00px;
+    padding-bottom: 30px;
+
+}
+
+.producto{
+    border-top: solid grey;
+    border-bottom: solid grey;
+    padding: 20px 25px 0px 25px;
+}
+
+#modelo{
+    font-size: calc(1em + 1vw);
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.imagen{
+    width: 10vw;
+    padding-top: 1vw;
+}
+
+#precio{
+    font-size: calc(1em + 0.2vw);
+    font-weight: 500;
+    font-style: italic;
+}
+
+#talle{
+    font-size: calc(1em - 0.1vw);
+    font-weight: 500;
+    font-style: italic;
+}
+
+.cantidad{
+    display: flex;
+    align-items: center;
+}
+
+.numeros{
+    margin: 15px;
+}
+
+.botones{
+    margin: 10px;
+    padding: 10px;
+    font-size: 1px;
+}
+
+button{
+    font-size: 20px;
+    color: white;
+    width: 2vw;
+    height: 2vw;
+    border: solid white 2px;
+    background-color: black;
+
+
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.dos{
+    font-size: 1.8vw;
+    text-align: center;    
+    width: 3vw;
+    height: 3vw;
+    padding-top: 1vw;
+}
+
+.titulo{
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.trash_icon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    align-self: flex-end;
+    
+}
+
+.total{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;    
+    width: 200px;
+}
+
+.ptotal{
+    font-size: 20px;
+}
+
+
+.cupon{
+    text-align-last: center;
+    margin-top: 25px;
+}
+
+
+#cuponB{
+    width: 190px;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    margin: 0px 20px;
+}
+
+#botones{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.final{
+    display: flex;
+    place-content: space-between;
+    margin-top: 30px;
+}
+
+.divFinal{
+    text-align: center;
+    width: 50%;
+}
+
+.botonFinal{
+    width: 200px;
+    margin: 0px 20px;
+    font-size: 18px;
+    height: 50px;
+}
+
+.centrado{
+    text-align: center;
+}
+
+@media(max-width: 700px){
+    main{
+        margin-top: 0px;
+        
+    }
+    
+    h2{
+        display: block;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 30px;
+        text-align: center;
+        margin: 10px 0px 0px 0px;
+        font-weight: 500;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    
+    }
+    
+    .producto{
+        border-bottom: solid grey;
+        width: 100vw;        
+        padding: 0px;
+    }
+    
+    #modelo{
+        font-size: 20px;
+        padding: 0px;
+        margin: 10px 10px 0px 10px;
+    
+    }
+    
+    .imagen{
+        width: 150px;
+        padding-top: 5px;
+        margin: 0px 10px;
+    }
+    
+    #precio{
+        font-size: 15px;
+        font-weight: 500;
+        font-style: italic;
+        margin: 8px 10px 10px 10px;
+    }
+    
+    .cantidad{
+        display: flex;
+        align-items: center;
+    }
+    
+    .numeros{
+        margin: 15px;
+    }
+    
+    .botones{
+        margin: 10px;
+        padding: 10px;
+        font-size: 2px;
+    }
+    
+    button{
+        font-size: 20px;
+        color: white;
+        width: 22px;
+        height: 22px;
+        border: solid white 2px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    
+    }
+    
+    button:hover{
+        background-color: white;
+        color: black;
+        cursor: pointer;
+    }
+    
+    .dos{
+        font-size: 20px;
+        text-align: center;    
+        align-self: center;
+        width: 15px;
+        height: 15px;
+        padding-top: 0px;
+        margin-bottom: 7px;
+    }
+    
+    .titulo{
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    #trash_icon{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        align-self: center;
+        font-size: 15px;
+        margin-right: 10px;
+        margin-bottom: 7px;
+        
+    }
+    
+    .total{
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;    
+        width: 200px;
+    }
+    
+    .ptotal{
+        font-size: 20px;
+    }
+    
+    
+    .cupon{
+        text-align-last: center;
+        margin-top: 25px;
+    }
+    
+    
+    #cuponB{
+        width: 150px;
+        height: 25px;
+        font-size: 17px;
+        background-color: #252525;
+        color: grey;
+        border: none;
+        margin: 0px 20px;
+    }
+    
+    #botones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .final{
+        display: flex;
+        place-content: space-between;
+        margin-top: 30px;
+    }
+    
+    .divFinal{
+        text-align: center;
+        width: 50%;
+    }
+    
+    .botonFinal{
+        width: 170px;
+        margin: 0px 20px;
+        font-size: 15px;
+        height: 40px;
+    }
+    
+    
+}

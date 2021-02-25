@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Broken Youth | Carrito de Compras</title>
+    <%- include('./partials/head.ejs')%>    
+    <link rel='stylesheet' href='/stylesheets/carrito.css' />
+    <script>
+        window.onload = function(){
+        fetch("https://api.giphy.com/v1/gifs/search?api_key=f7ZIFOg4vbuVvlrf5sckjRtaYbpf4ue4&q=shopping&limit=1&offset=0&rating=g&lang=en")
+        .then(function(respuesta){
+            return respuesta.json();
+        })
+        .then(function(info){
+            console.log(info)
+            for(var i = 0; i < info.data.length; i++){
+                
+                let foto = "<img src=" + info.data[i].images.original.url + "</img>";
+                document.querySelector("ul").innerHTML += "<li>" + foto + "</li>";
+            }
+        })
+      }
+    </script>
+  </head>
+    <body>
+        <%- include('./partials/header.ejs')%>  
+
+        <main>
+            
+            <h2 class="centrado">FELICITACIONES!</h2>
+            <h3 class="centrado">CERRASTE TU COMPRA POR $ <%= compra.precio_total%></h3>
+            <ul class="centrado" style="list-style:none">
+                <!-- <h4 class="centrado">COMPRASTE:</h4>
+                <% compra.comprasProductos.forEach(compraProducto => { %>
+                    <li>
+                        <%= compraProducto.id %>
+                    </li>
+                <% }) %> -->
+            </ul>
+            
+        </main>
+        <%- include("./partials/footer") %>
+  </body>
+</html>

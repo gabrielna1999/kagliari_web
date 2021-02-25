@@ -1,0 +1,277 @@
+.prod_img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#prod_main{
+    width: 100vw;
+       
+}
+
+#prod_sub{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 0px;
+    width: 100vw;
+}
+
+.prod_sub{
+    width: 22vw;
+}
+
+#prod_name{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    font-size: 10vw;
+    text-align: center;
+    padding-top: 5vw;
+        
+}
+
+#prod_precio{    
+    text-align: center;
+    font-size: 5vw;
+    padding-top: 2vw;
+}
+
+#info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#select_talle{
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+    margin: 10vw;
+    font-size: 32px;
+    margin-bottom: 5vw;
+}
+
+.elegir_talle{
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+}
+
+#talles{
+    display: flex;
+    font-size: 5vw;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.talles{
+    display: flex;
+    border: solid 3px white;
+    font-size: 5vw;
+    width: 7vw;
+    height: 7vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.talles:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.talles:focus{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+#agregar_talle{    
+    border: solid 3px white;
+    padding: 3vw 5vw;
+    margin: 10vw;
+    font-size: 5vw;
+    font-weight: bold;
+    margin-bottom: 6vw;
+}
+
+#agregar_talle:hover{
+    background-color: white;
+    color: black;    
+    cursor: pointer;    
+}
+
+#agregar_talle:focus{
+    background-color: white;
+    color: black;    
+    cursor: pointer;
+}
+
+#descripcion{
+    margin: 30px;
+}
+
+#descrip_titulo{
+    border-bottom: solid 4px white;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#descrip_content{
+    font-size: 12px;
+}
+
+.edit-prod{
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    width: 140px;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+#detalle-prod-admin{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10vw;
+}
+
+
+
+@media(min-width: 700px){
+    main{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 220px;
+    }
+
+    #prod_img{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: flex-start;
+        align-self: flex-start;
+    }
+
+    #prod_main{
+        width: 28vw;
+    }
+
+    #prod_sub{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: right;
+        padding: 0px 1vw;
+        height: 28vw;
+        width: 6vw;
+    }
+
+    .prod_sub{
+        width: 6vw;
+    }
+
+    .prod_sub:hover{
+        border: solid 3px gray;
+        position: relative;
+    }
+
+    #info{
+        height: 28vw;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: max-content;
+    }
+
+    #prod_name{
+        padding: 0px;
+        text-align: start;
+        font-size: calc(1em + 3vw);
+        align-self: flex-start;
+    }
+
+    #prod_categoria{
+        padding: 0px;
+        color: lightgrey ;
+        text-align: start;
+        font-style: italic;
+        text-decoration-line: underline;
+        font-size: calc(1em);
+        align-self: flex-start;
+    }
+
+    #prod_precio{
+        font-size: calc(1.5vw);
+        text-align: left;
+        padding-top: 1vw;
+    }
+
+    #select_talle{
+        margin: 1vw 0px;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 20vw;
+        height: 10vw;
+    }
+
+    .elegir_talle{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 12vw;
+        align-self: flex-start;
+    }
+
+    .talles{
+        font-size: 1.5vw;
+        width: 2vw;
+        height: 2vw;
+    }
+
+    #talles{
+        font-size: 1vw;
+        display: inline-block;
+    }
+
+    
+
+    #agregar_talle{
+        font-size: 1vw;
+        padding: 1vw 20px;
+        margin: 1.5vw 0px;
+    }
+
+    #descripcion{
+        margin: 0px;
+        width: 40vw;
+    }
+
+    #descrip_titulo{
+        font-size: 1vw;
+        border-bottom: solid 0.2vw white;
+        
+    }
+
+    #descrip_content{
+        font-size: 1vw;
+    }
+}
