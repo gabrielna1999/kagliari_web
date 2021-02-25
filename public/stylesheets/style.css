@@ -20,6 +20,7 @@ body{
 
 main{
   width: 100vw;
+  margin-top: 20vh;
   margin-bottom: 7vw;
   display: flex;
   flex-direction: column;
@@ -229,7 +230,7 @@ input[type="text"]{
 #logo_art{
   display: flex;
   width: 100vw;
-  padding: 20px 0px;
+  padding: 10px 0px;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
@@ -331,7 +332,6 @@ input[type="text"]{
 }
 
 #quienes-somos-main{
-  margin-top: 0px;
   width: 100vw;
   text-align: center;
   align-self: center;
