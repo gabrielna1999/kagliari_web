@@ -429,6 +429,7 @@ a{
   background-color: #272727;
   display: flex;
   justify-content: space-around;
+  align-content: center;
   bottom: 0px;
   position: relative;
   width: 100%;
