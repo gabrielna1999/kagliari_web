@@ -74,16 +74,18 @@
     <div id = "destacados"> PRODUCTOS DESTACADOS </div>
     <section id="productos">
       <% for (let i = 0; i < 4; i++){ %>
+        <% if( productos[i] != undefined){ %>
         <div class="producto">
           <a href="/product/detalleProducto/<%= productos[i].id %>">
-            <img id = "imagen" src="/images/producto/<%= productos[i].imagen_ruta %>">
+            <img id = "imagen" src="/images/producto/<%= productos[i].imagen.ruta %>">
           </a>
           <section id="info">  
             <div id="nombreproduc"><%= productos[i].nombre %></div>
             <div id="precioproduc">$<%= productos[i].precio %></div>
           </section>
         </div>
-      <% } %>
+        <% } %> 
+      <% } %> 
     </section>
 
     <%- include("./partials/footer") %>

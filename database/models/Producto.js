@@ -8,9 +8,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         nombre: dataTypes.STRING,
         precio: dataTypes.INTEGER,
+        precio_oferta: dataTypes.INTEGER,
         descripcion: dataTypes.STRING,
         categoria_id: {type: dataTypes.INTEGER, foreignKey: true},
-        imagen_ruta: dataTypes.STRING,
+        stock: dataTypes.INTEGER,
+
     };
     const config= {
         tableName: "productos",

@@ -15,6 +15,10 @@ module.exports= (sequelize,dataTypes) => {
         },
         finalizada: dataTypes.BOOLEAN,
         fecha_finalizacion: dataTypes.DATE,
+        pais: dataTypes.STRING,
+        provincia: dataTypes.STRING,
+        localidad: dataTypes.STRING,
+        calle: dataTypes.STRING,
     };
 
     const config= {
